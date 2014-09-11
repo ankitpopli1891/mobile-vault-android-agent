@@ -106,6 +106,7 @@ public class Constants {
 	public static final String WIFI_STATE_ENABLE = "enable";
 	public static final String WIFI_LIST = "installed_wifis";
 	public static final String WIFI_SSID ="ssid";
+	public static final String WIFI_HIDDEN_SSID = "hidden_network";
 	public static final String WIFI_SECURITY ="wifi_security";
 	public static final String WIFI_SECURITY_NONE ="NONE";
 	public static final String WIFI_SECURITY_WEP ="WEP";

@@ -57,10 +57,10 @@ public class MainActivity extends Activity {
 			acceptConditions.setText("Sorry you need to accept conditions to proceed....");
 			acceptConditions.setClickable(true);
 		}else{
-		Log.i("see", "oncreate");
-		checkConditions();
+			Log.i("see", "oncreate");
+			checkConditions();
 		}
-		
+
 
 	}
 	@Override
@@ -68,38 +68,39 @@ public class MainActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onDestroy();
 		Log.i("see", "ondestroy");
-	    
+
 		unregisterReceiver(samsungReciever);
 	}
 	private void checkConditions(){
 		//sendToWelcomePage();
 		if(isConnectingToInternet()){
-		  if(AdminHelper.isUserLoggedIn(this)){
-			if(AdminHelper.isAdminActive(this)){
-				if(AdminHelper.isSamsungESDKEnabled(this))
-					if(AdminHelper.isGCMRegistered(this)){
-						Log.i("see", "gcmif");sendToWelcomePage();}
+			if(AdminHelper.isUserLoggedIn(this)){
+				if(AdminHelper.isAdminActive(this)){
+					if(AdminHelper.isSamsungESDKEnabled(this))
+						if(AdminHelper.isGCMRegistered(this)){
+							Log.i("see", "gcmif");sendToWelcomePage();}
+						else{
+							Log.i("see", "gcmelse");sendToGCMPage();}
 					else{
-						Log.i("see", "gcmelse");sendToGCMPage();}
-				else{
-					Log.i("see", "register");
-					Boolean canRegiser=Registration.register(this); 
-					if(!canRegiser)
-					sendToLoginPage();
+						if(android.os.Build.MANUFACTURER.equalsIgnoreCase("Samsung")) {
+							Boolean canRegiser=Registration.register(this); 
+							if(!canRegiser)
+								sendToLoginPage();
 						}
-				
+					}
+
+				}else{
+					sendToLoginPage();
+				}
 			}else{
 				sendToLoginPage();
 			}
 		}else{
-			sendToLoginPage();
-			}
-	}else{
 			AlertDialog alertDialog = new AlertDialog.Builder(
 					this).create();
 			alertDialog.setTitle("Ohh No!!");
 			alertDialog.setMessage("No Internet Connection...Exiting..");
-            alertDialog.show();
+			alertDialog.show();
 			new Handler().postDelayed(new Runnable() {
 				@Override
 				public void run() {
@@ -110,7 +111,7 @@ public class MainActivity extends Activity {
 	}
 
 	private void sendToLoginPage(){
-		Intent login = new Intent(getApplicationContext(),LoginActivity2.class);
+		Intent login = new Intent(getApplicationContext(),LoginActivity.class);
 		startActivityForResult(login, LOGIN_REQUEST_CODE);
 	}
 
@@ -152,18 +153,20 @@ public class MainActivity extends Activity {
 		Log.i("see", "acresult:"+resultCode);
 		if(requestCode==GCM_REQUEST_CODE)
 			checkConditions();
-	//	else if(requestCode)
-			finish();
+		//	else if(requestCode)
+		finish();
 	}
 	public void register(View v)
 	{   
-		Boolean canRegiser=Registration.register(this); 
-		Log.i("see", "hww:"+canRegiser);
-		acceptConditions.setText("Processing...Please Wait");
-		acceptConditions.setClickable(false);
-		if(!canRegiser){
-		sendToLoginPage();}
-	    
+		if(android.os.Build.MANUFACTURER.equalsIgnoreCase("Samsung")) {
+			Boolean canRegiser=Registration.register(this); 
+			Log.i("see", "hww:"+canRegiser);
+			acceptConditions.setText("Processing...Please Wait");
+			acceptConditions.setClickable(false);
+			if(!canRegiser)
+				sendToLoginPage();
+		}
+
 	}
-	
+
 }

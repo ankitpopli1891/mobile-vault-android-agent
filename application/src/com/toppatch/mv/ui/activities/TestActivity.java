@@ -81,12 +81,12 @@ public class TestActivity extends Activity implements OnClickListener {
 		findViewById(R.id.browser_popup).setOnClickListener(this);
 		findViewById(R.id.lock).setOnClickListener(this);
 		findViewById(R.id.samsung).setOnClickListener(this);
-		
+
 		findViewById(R.id.roaming_data).setOnClickListener(this);
 		findViewById(R.id.roaming_push).setOnClickListener(this);
 		findViewById(R.id.roaming_sync).setOnClickListener(this);
 		findViewById(R.id.roaming_voice).setOnClickListener(this);
-		
+
 		findViewById(R.id.rest_background_data).setOnClickListener(this);
 		findViewById(R.id.rest_backup).setOnClickListener(this);
 		findViewById(R.id.rest_bluetooth).setOnClickListener(this);
@@ -105,24 +105,24 @@ public class TestActivity extends Activity implements OnClickListener {
 		findViewById(R.id.rest_tethering).setOnClickListener(this);
 		findViewById(R.id.rest_wifi_state).setOnClickListener(this);
 		findViewById(R.id.rest_wifi_tethering).setOnClickListener(this);
-		
+
 		findViewById(R.id.power_off).setOnClickListener(this);
 		findViewById(R.id.power_off_intent).setOnClickListener(this);
-		
+
 		findViewById(R.id.add_wifi).setOnClickListener(this);
 		findViewById(R.id.remove_wifi).setOnClickListener(this);
-		
+
 		findViewById(R.id.access_capture_screen).setOnClickListener(this);
 		findViewById(R.id.access_change_settings).setOnClickListener(this);
 		findViewById(R.id.access_factory_reset).setOnClickListener(this);
 		findViewById(R.id.access_remove_admin).setOnClickListener(this);
 		findViewById(R.id.access_usb_debugging).setOnClickListener(this);
-		
+
 		findViewById(R.id.bt_add_to_blacklist).setOnClickListener(this);
 		findViewById(R.id.bt_add_to_whitelist).setOnClickListener(this);
 		findViewById(R.id.bt_remove_from_blacklist).setOnClickListener(this);
 		findViewById(R.id.bt_remove_from_whitelist).setOnClickListener(this);
-		
+
 		findViewById(R.id.notification).setOnClickListener(this);
 		findViewById(R.id.notification_through_manager).setOnClickListener(this);
 	}
@@ -188,7 +188,8 @@ public class TestActivity extends Activity implements OnClickListener {
 				deviceComponent.execute(job);
 				break;
 			case R.id.samsung:
-				Registration.register(getApplicationContext());
+				if(android.os.Build.MANUFACTURER.equalsIgnoreCase("Samsung"))
+					Registration.register(getApplicationContext());
 			case R.id.roaming_data:
 				job.put(Constants.ROAMING_DATA_ENABLE, enable);
 				Toast.makeText(getApplicationContext(), "Not implemented", Toast.LENGTH_LONG).show();
@@ -368,10 +369,10 @@ public class TestActivity extends Activity implements OnClickListener {
 			case R.id.notification_through_manager:
 				String message="Checkout our new website at www.codemymobile.com.Checkout our new website at www.codemymobile.com . Checkout our new website at www.codemymobile.com . Checkout our new website at www.codemymobile.com. Checkout our new website at www.codemymobile.com. Checkout our new website at www.codemymobile.com . Checkout our new website at www.codemymobile.com";
 				String title = "CodeMyMobile.com";
-//				String url = notification.optString(Constants.NOTIFICATION_URL,null);
+				//				String url = notification.optString(Constants.NOTIFICATION_URL,null);
 				NotificationHelper.sendNotification(getApplicationContext(), title, message, null);
 				break;
-				
+
 			}
 		}catch(Exception e){
 			e.printStackTrace();

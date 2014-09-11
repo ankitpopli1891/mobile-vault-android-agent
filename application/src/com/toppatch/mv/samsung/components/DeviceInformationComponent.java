@@ -129,7 +129,8 @@ public class DeviceInformationComponent extends Component {
 			Intent batteryStatus = mContext.registerReceiver(null, ifilter);
 			int level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
 			int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
-			double batteryPct = level / (float)scale;			
+			Log.e(TAG, "Lev: " + level + " scale:" + scale);
+			double batteryPct = level / (float)scale * 100;			
 			return batteryPct;
 		}else{
 			return  -1;
