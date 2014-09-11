@@ -8,45 +8,45 @@ import android.content.Context;
 import android.util.Log;
 
 import com.toppatch.mv.Constants;
-import com.toppatch.mv.samsung.components.Component;
-import com.toppatch.mv.samsung.components.policies.access.AllowFactoryResetComponent;
-import com.toppatch.mv.samsung.components.policies.access.AllowRemoveAdminComponent;
-import com.toppatch.mv.samsung.components.policies.access.AllowScreenShotComponent;
-import com.toppatch.mv.samsung.components.policies.access.ChangeSettingsComponent;
-import com.toppatch.mv.samsung.components.policies.access.USBDebuggingComponent;
-import com.toppatch.mv.samsung.components.policies.application.AllowAppInstallComponent;
-import com.toppatch.mv.samsung.components.policies.application.AndroidMarketComponent;
-import com.toppatch.mv.samsung.components.policies.application.BlackListApplicationComponent;
-import com.toppatch.mv.samsung.components.policies.application.InstallApplicationComponent;
-import com.toppatch.mv.samsung.components.policies.application.UninstallApplicationComponent;
-import com.toppatch.mv.samsung.components.policies.application.YoutubeComponent;
-import com.toppatch.mv.samsung.components.policies.bluetooth.BluetoothAddToBlackListComponent;
-import com.toppatch.mv.samsung.components.policies.bluetooth.BluetoothAddToWhiteListComponent;
-import com.toppatch.mv.samsung.components.policies.bluetooth.BluetoothPowerStateComponent;
-import com.toppatch.mv.samsung.components.policies.bluetooth.BluetoothStateComponent;
-import com.toppatch.mv.samsung.components.policies.browser.AutoFillComponent;
-import com.toppatch.mv.samsung.components.policies.browser.CookiesComponent;
-import com.toppatch.mv.samsung.components.policies.browser.ForceFraudWarningComponent;
-import com.toppatch.mv.samsung.components.policies.browser.HttpProxyComponent;
-import com.toppatch.mv.samsung.components.policies.browser.JavascriptComponent;
-import com.toppatch.mv.samsung.components.policies.browser.PopupComponent;
-import com.toppatch.mv.samsung.components.policies.misc.CameraStateComponent;
-import com.toppatch.mv.samsung.components.policies.misc.ExternalStorageEncryptionComponent;
-import com.toppatch.mv.samsung.components.policies.misc.InternalStorageEncryptionComponent;
-import com.toppatch.mv.samsung.components.policies.restriction.AndroidBeamComponent;
-import com.toppatch.mv.samsung.components.policies.restriction.AudioRecordComponent;
-import com.toppatch.mv.samsung.components.policies.restriction.BackgroundDataComponent;
-import com.toppatch.mv.samsung.components.policies.restriction.BackupComponent;
-import com.toppatch.mv.samsung.components.policies.restriction.ClipboardComponent;
-import com.toppatch.mv.samsung.components.policies.restriction.GoogleCrashReportComponent;
-import com.toppatch.mv.samsung.components.policies.restriction.MicrophoneStateComponent;
-import com.toppatch.mv.samsung.components.policies.restriction.WiFiStateComponent;
-import com.toppatch.mv.samsung.components.policies.roaming.RoamingDataComponent;
-import com.toppatch.mv.samsung.components.policies.roaming.RoamingPushComponent;
-import com.toppatch.mv.samsung.components.policies.roaming.RoamingSyncComponent;
-import com.toppatch.mv.samsung.components.policies.roaming.RoamingVoiceCallsComponent;
-import com.toppatch.mv.samsung.components.policies.vpn.VPNAddComponent;
-import com.toppatch.mv.samsung.components.policies.wifi.WifiAddComponent;
+import com.toppatch.mv.generic.components.Component;
+import com.toppatch.mv.generic.components.policies.access.AllowFactoryResetComponent;
+import com.toppatch.mv.generic.components.policies.access.AllowRemoveAdminComponent;
+import com.toppatch.mv.generic.components.policies.access.AllowScreenShotComponent;
+import com.toppatch.mv.generic.components.policies.access.ChangeSettingsComponent;
+import com.toppatch.mv.generic.components.policies.access.USBDebuggingComponent;
+import com.toppatch.mv.generic.components.policies.application.AllowAppInstallComponent;
+import com.toppatch.mv.generic.components.policies.application.AndroidMarketComponent;
+import com.toppatch.mv.generic.components.policies.application.BlackListApplicationComponent;
+import com.toppatch.mv.generic.components.policies.application.InstallApplicationComponent;
+import com.toppatch.mv.generic.components.policies.application.UninstallApplicationComponent;
+import com.toppatch.mv.generic.components.policies.application.YoutubeComponent;
+import com.toppatch.mv.generic.components.policies.bluetooth.BluetoothAddToBlackListComponent;
+import com.toppatch.mv.generic.components.policies.bluetooth.BluetoothAddToWhiteListComponent;
+import com.toppatch.mv.generic.components.policies.bluetooth.BluetoothPowerStateComponent;
+import com.toppatch.mv.generic.components.policies.bluetooth.BluetoothStateComponent;
+import com.toppatch.mv.generic.components.policies.browser.AutoFillComponent;
+import com.toppatch.mv.generic.components.policies.browser.CookiesComponent;
+import com.toppatch.mv.generic.components.policies.browser.ForceFraudWarningComponent;
+import com.toppatch.mv.generic.components.policies.browser.HttpProxyComponent;
+import com.toppatch.mv.generic.components.policies.browser.JavascriptComponent;
+import com.toppatch.mv.generic.components.policies.browser.PopupComponent;
+import com.toppatch.mv.generic.components.policies.misc.CameraStateComponent;
+import com.toppatch.mv.generic.components.policies.misc.ExternalStorageEncryptionComponent;
+import com.toppatch.mv.generic.components.policies.misc.InternalStorageEncryptionComponent;
+import com.toppatch.mv.generic.components.policies.restriction.AndroidBeamComponent;
+import com.toppatch.mv.generic.components.policies.restriction.AudioRecordComponent;
+import com.toppatch.mv.generic.components.policies.restriction.BackgroundDataComponent;
+import com.toppatch.mv.generic.components.policies.restriction.BackupComponent;
+import com.toppatch.mv.generic.components.policies.restriction.ClipboardComponent;
+import com.toppatch.mv.generic.components.policies.restriction.GoogleCrashReportComponent;
+import com.toppatch.mv.generic.components.policies.restriction.MicrophoneStateComponent;
+import com.toppatch.mv.generic.components.policies.restriction.WiFiStateComponent;
+import com.toppatch.mv.generic.components.policies.roaming.RoamingDataComponent;
+import com.toppatch.mv.generic.components.policies.roaming.RoamingPushComponent;
+import com.toppatch.mv.generic.components.policies.roaming.RoamingSyncComponent;
+import com.toppatch.mv.generic.components.policies.roaming.RoamingVoiceCallsComponent;
+import com.toppatch.mv.generic.components.policies.vpn.VPNAddComponent;
+import com.toppatch.mv.generic.components.policies.wifi.WifiAddComponent;
 
 public class PolicyControllerComponent extends Component {
 
@@ -200,7 +200,7 @@ public class PolicyControllerComponent extends Component {
 				JSONObject changeSettingsEnable = access
 						.getJSONObject(Constants.PLUG_ACCESS_CHANGE_SETTINGS);
 				new ChangeSettingsComponent(context)
-				.execute(changeSettingsEnable);
+						.execute(changeSettingsEnable);
 			} catch (JSONException e) {
 				Log.d(TAG, "No change settings sent "
 						+ Constants.PLUG_ACCESS_CHANGE_SETTINGS);
@@ -219,7 +219,7 @@ public class PolicyControllerComponent extends Component {
 				JSONObject changeAdminEnable = access
 						.getJSONObject(Constants.PLUG_ACCESS_CHANGE_ADMIN);
 				new AllowRemoveAdminComponent(context)
-				.execute(changeAdminEnable);
+						.execute(changeAdminEnable);
 			} catch (JSONException e) {
 				Log.d(TAG, "No " + Constants.PLUG_ACCESS_CHANGE_ADMIN + " sent");
 			}
@@ -236,9 +236,10 @@ public class PolicyControllerComponent extends Component {
 				JSONObject factoryResetEnable = access
 						.getJSONObject(Constants.PLUG_ACCESS_FACTORY_RESET);
 				new AllowFactoryResetComponent(context)
-				.execute(factoryResetEnable);
+						.execute(factoryResetEnable);
 			} catch (JSONException e) {
-				Log.d(TAG, "No " + Constants.PLUG_ACCESS_FACTORY_RESET + " sent");
+				Log.d(TAG, "No " + Constants.PLUG_ACCESS_FACTORY_RESET
+						+ " sent");
 			}
 		}
 
@@ -248,7 +249,7 @@ public class PolicyControllerComponent extends Component {
 				JSONObject bluetoothStatus = bluetooth
 						.getJSONObject(Constants.PLUG_BT_STATUS);
 				new BluetoothPowerStateComponent(context)
-				.execute(bluetoothStatus);
+						.execute(bluetoothStatus);
 				new BluetoothStateComponent(context).execute(bluetoothStatus);
 			} catch (JSONException e) {
 				Log.d(TAG, "No enable settings sent "
@@ -261,9 +262,10 @@ public class PolicyControllerComponent extends Component {
 				JSONObject jsonObject = new JSONObject();
 				jsonObject.put(Constants.BLUETOOTH_LIST, blackListedPairing);
 				new BluetoothAddToBlackListComponent(context)
-				.execute(jsonObject);
+						.execute(jsonObject);
 			} catch (JSONException e) {
-				Log.d(TAG, "No blackList pairings " + Constants.PLUG_BT_BLACK_LISTED);
+				Log.d(TAG, "No blackList pairings "
+						+ Constants.PLUG_BT_BLACK_LISTED);
 			}
 			try {
 				JSONArray whiteListedPairing = bluetooth
@@ -271,9 +273,10 @@ public class PolicyControllerComponent extends Component {
 				JSONObject jsonObject = new JSONObject();
 				jsonObject.put(Constants.BLUETOOTH_LIST, whiteListedPairing);
 				new BluetoothAddToWhiteListComponent(context)
-				.execute(jsonObject);
+						.execute(jsonObject);
 			} catch (JSONException e) {
-				Log.d(TAG, "No whiteList pairings " + Constants.PLUG_BT_WHITE_LISTED);
+				Log.d(TAG, "No whiteList pairings "
+						+ Constants.PLUG_BT_WHITE_LISTED);
 
 			}
 		}
@@ -411,7 +414,7 @@ class ExecutionHelper {
 			JSONObject jsonObject = new JSONObject();
 			try {
 				jsonObject
-				.put(Constants.APP_ANDROID_UNINSTALL, apps.toString());
+						.put(Constants.APP_ANDROID_UNINSTALL, apps.toString());
 				new UninstallApplicationComponent(context).execute(jsonObject);
 			} catch (JSONException e) {
 				e.printStackTrace();
